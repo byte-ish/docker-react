@@ -5,6 +5,8 @@ on:
     branches:
       - main  # or your main branch name
   pull_request:
+    branches:
+      - main
 
 jobs:
   build:
@@ -37,7 +39,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: byte-ish/frontend-app:latest
+          tags: byteish/frontend-app:latest
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new
 
